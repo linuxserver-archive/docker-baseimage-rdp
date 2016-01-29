@@ -10,6 +10,11 @@ BUILDLIST="build-essential libcairo2-dev libfreerdp-dev libjpeg-turbo8-dev libpn
 
 guac_version="0.9.9"
 
+# configure abc user for baseimage
+RUN usermod -s /bin/bash abc && \
+usermod -a -G adm,sudo abc && \
+echo "abc:PASSWD" | chpasswd
+
 # install build packages
 RUN add-apt-repository ppa:no1wantdthisname/openjdk-fontfix && \
 apt-get update -q && \
@@ -53,3 +58,16 @@ apt-get install --no-install-recommends $BASE_APTLIST -qy && \
 apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+#Adding Custom files
+ADD init/ /etc/my_init.d/
+ADD services/ /etc/service/
+RUN chmod -v +x /etc/service/*/run && chmod -v +x /etc/my_init.d/*.sh && \
+
+# configuration
+ln -s /etc/guacamole/guacamole.properties /usr/share/tomcat7/.guacamole/ && \
+ln -s /etc/guacamole/guacamole.properties /usr/share/tomcat7-root/.guacamole/ && \
+ln -s /etc/guacamole/guacamole.properties /root/.guacamole/ && \
+rm -Rf /var/lib/tomcat7/webapps/ROOT && \ 
+ln -s /var/lib/tomcat7/webapps/guacamole.war /var/lib/tomcat7/webapps/ROOT.war && \
+ln -s /usr/local/lib/freerdp/guacsnd.so /usr/lib/x86_64-linux-gnu/freerdp/ && \ 
+ln -s /usr/local/lib/freerdp/guacdr.so /usr/lib/x86_64-linux-gnu/freerdp/

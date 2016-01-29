@@ -6,7 +6,7 @@ ENV BASE_APTLIST="libcairo-script-interpreter2 libfreerdp-plugins-standard libfr
 libfuse2 libossp-uuid16  openbox openjdk-7-jre tomcat7 unzip vnc4server \
 wget x11-xserver-utils xfonts-100dpi xfonts-75dpi xfonts-base xrdp" \
 
-BUILDLIST="build-essential libcairo2-dev libfreerdp-dev libjpeg-turbo8-dev libpng12-dev libossp-uuid-dev libwebp-dev" \
+BUILDLIST="build-essential libcairo2-dev libfreerdp-dev libjpeg-turbo8-dev libpng12-dev libossp-uuid-dev" \
 
 guac_version="0.9.9"
 

@@ -1,0 +1,5 @@
+#!/bin/bash
+exec 2>&1
+
+exec env DISPLAY=:1 HOME=/config /sbin/setuser abc  /usr/bin/openbox-session
+

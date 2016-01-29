@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p /config/{.config/openbox,.cache} /etc/guacamole
+mkdir -p /config/{.config/openbox,.cache} /etc/guacamole /tmp/tomcat7-tomcat7-tmp
 
 [[ -e /defaults/startapp.sh ]] && chmod +x /defaults/startapp.sh
 [[ ! -f /etc/guacamole/guacamole.properties ]] && cp /defaults/guacamole.properties /etc/guacamole/guacamole.properties
@@ -14,5 +14,5 @@ APPNAME=${APP_NAME:-"GUI_APPLICATION"}
 sed -i -e "s#GUI_APPLICATION#$APPNAME#" /etc/xrdp/xrdp.ini
 sed -i -e "s#GUI_APPLICATION#$APPNAME#" /etc/guacamole/noauth-config.xml
 
-chown abc:abc -R  /config /defaults
+chown abc:abc -R  /config /defaults /tmp/tomcat7-tomcat7-tmp
 

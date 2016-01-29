@@ -40,8 +40,8 @@ cp /tmp/nouathwar/guacamole*.jar /var/lib/guacamole/classpath/guacamole-auth-noa
 curl -o /var/lib/tomcat7/webapps/guacamole.war -L http://sourceforge.net/projects/guacamole/files/current/binary/guacamole-${guac_version}.war/download && \
 
 # cleanup
-apt-get purge --remove $BUILDLIST -y && \
-apt-get autoremove -y && \
+apt-get --purge autoremove $BUILDLIST -qy && \
+apt-get autoremove -qy && \
 apt-get clean -y && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

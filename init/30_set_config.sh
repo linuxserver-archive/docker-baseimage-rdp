@@ -8,6 +8,7 @@ mkdir -p /config/{.config/openbox,.cache} /etc/guacamole
 [[ ! -f /etc/xrdp/xrdp.ini ]] && cp /defaults/xrdp.ini /etc/xrdp/xrdp.ini
 [[ ! -f /etc/guacamole/noauth-config.xml ]] && cp /defaults/noauth-config.xml /etc/guacamole/noauth-config.xml
 [[ ! -f /config/.config/openbox/autostart ]] && cp /defaults/autostart /config/.config/openbox/autostart
+[[ ! -f /config/.config/openbox/rc.xml ]] && cp /defaults/rc.xml /config/.config/openbox/rc.xml
 
 APPNAME=${APP_NAME:-"GUI_APPLICATION"}
 sed -i -e "s#GUI_APPLICATION#$APPNAME#" /etc/xrdp/xrdp.ini

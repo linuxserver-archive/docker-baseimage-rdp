@@ -4,9 +4,9 @@ MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
 
 ENV BASE_APTLIST="libcairo-script-interpreter2 libfreerdp-plugins-standard libfreerdp1 libxkbfile1 \
 libfuse2 libossp-uuid16  openbox openjdk-7-jre tomcat7 unzip vnc4server \
-wget x11-xserver-utils xfonts-100dpi xfonts-75dpi xfonts-base xrdp" \
+wget x11-xserver-utils xfonts-100dpi xfonts-75dpi xfonts-base xrdp libwebp-dev" \
 
-BUILDLIST="build-essential libcairo2-dev libfreerdp-dev libjpeg-turbo8-dev libpng12-dev libossp-uuid-dev" \
+BUILDLIST="build-essential libcairo2-dev libfreerdp-dev libjpeg-turbo8-dev libpango1.0-dev libwebp-dev libpng12-dev libssh2-1-dev libvncserver-dev libossp-uuid-dev" \
 
 guac_version="0.9.9"
 

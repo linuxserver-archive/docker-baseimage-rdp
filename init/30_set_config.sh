@@ -2,6 +2,7 @@
 
 mkdir -p /config/{.config/openbox,.cache} /etc/guacamole /tmp/tomcat7-tomcat7-tmp
 
+
 [[ -e /defaults/startapp.sh ]] && chmod +x /defaults/startapp.sh
 [[ ! -f /etc/guacamole/guacamole.properties ]] && cp /defaults/guacamole.properties /etc/guacamole/guacamole.properties
 [[ ! -f /etc/xrdp/sesman.ini ]] && cp /defaults/sesman.ini /etc/xrdp/sesman.ini

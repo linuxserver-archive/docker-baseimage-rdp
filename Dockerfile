@@ -15,7 +15,9 @@ usermod -a -G adm,sudo abc && \
 echo "abc:PASSWD" | chpasswd
 
 # install runtime packages
-RUN apt-get update -q && \
+RUN add-apt-repository ppa:no1wantdthisname/openjdk-fontfix && \
+add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
+apt-get update -q && \
 apt-get install --no-install-recommends $BASE_APTLIST -qy && \
 
 # make required folders

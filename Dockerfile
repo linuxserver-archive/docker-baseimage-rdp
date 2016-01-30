@@ -12,7 +12,7 @@ guac_version="0.9.9"
 RUN add-apt-repository ppa:no1wantdthisname/openjdk-fontfix && \
 add-apt-repository ppa:fkrull/deadsnakes-python2.7 && \
 apt-get update -q && \
-apt-get install --no-install-recommends $BASE_APTLIST -qy && \
+apt-get install --force-yes --no-install-recommends $BASE_APTLIST -qy && \
 
 # make required folders
 mkdir -p /var/lib/tomcat7/webapps /var/cache/tomcat7 /var/lib/guacamole/classpath \
